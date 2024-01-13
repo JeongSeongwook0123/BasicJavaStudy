@@ -1,6 +1,6 @@
 package com.example.basicjava;
 
- class Connection{
+class Connection{
      //Test
     private static Connection _inst = null;
     private int count = 0;
@@ -18,9 +18,20 @@ package com.example.basicjava;
 
 }
 
+class Test {
+
+    static int a = 3;
+    int b = 15;
+
+}
 public class MainJava {
 
      public static void main(String[] args) {
+
+         Test c = new Test();
+         Test.a = 5;
+         System.out.println(Test.a);
+         System.out.println(c.b);
 
          Connection conn1 = Connection.get();
          conn1.count();
