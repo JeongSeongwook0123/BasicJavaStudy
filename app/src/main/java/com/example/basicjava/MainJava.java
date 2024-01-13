@@ -5,42 +5,38 @@ class Connection{
     private static Connection _inst = null;
     private int count = 0;
 
-    static public Connection get(){
+    static public Connection get(){ //Singleton Pattern
         if(_inst == null) {
             _inst = new Connection();
             return _inst;
         }
         return _inst;
     }
+
     public void count() {count++;}
     public int getCount() {return count;}
 
-
 }
 
-class Test {
 
-    static int a = 3;
-    int b = 15;
-
-}
 public class MainJava {
 
      public static void main(String[] args) {
 
-         Test c = new Test();
-         Test.a = 5;
-         System.out.println(Test.a);
-         System.out.println(c.b);
-
          Connection conn1 = Connection.get();
+         System.out.println(conn1.getCount());  //0
          conn1.count();
+
          Connection conn2 = Connection.get();
+         System.out.println(conn1.getCount());  //1
          conn2.count();
-         Connection conn3 = Connection.get();
+
+         Connection conn3 = Connection.get();   //2
+         System.out.println(conn1.getCount());
          conn3.count();;
 
-         System.out.println(conn1.getCount());
+         System.out.println(conn1.getCount());  //3
+
      }
 
 }
