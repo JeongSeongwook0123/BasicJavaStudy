@@ -1,6 +1,7 @@
 package com.example.basicjava;
 
  class Connection{
+     //Test
     private static Connection _inst = null;
     private int count = 0;
 
